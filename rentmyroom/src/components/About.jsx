@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../Layout';
-import aboutUsImg1 from 'D:/rentmyroom/aboutUsImg1.jpg';
+import aboutUsImg1 from '../../aboutUsImg1.jpg';
 import Footer from '../HomeComponents/Footer';
 
 function About() {

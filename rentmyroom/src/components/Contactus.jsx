@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../Layout'
-import contactUsImg from 'D:/rentmyroom/contactUsImg.jpg'
+import contactUsImg from '../../contactUsImg.jpg'
 import  { useState } from 'react';
 import Footer from '../HomeComponents/Footer';
 

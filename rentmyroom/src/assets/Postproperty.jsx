@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import postHouseImage from 'D:/rentmyroom/postHouseImage.png';
+import postHouseImage from '../../postHouseImage.png';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 

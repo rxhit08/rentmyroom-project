@@ -43,6 +43,8 @@ export class PropertyService {
   }
 
   async getAllProperties() {
-    return this.propertyRepository.find();
+    return this.propertyRepository.find({
+      relations: ['owner'],
+    });
   }
 }

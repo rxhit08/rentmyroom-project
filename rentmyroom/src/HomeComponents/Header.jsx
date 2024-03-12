@@ -1,5 +1,5 @@
 import React from 'react'
-import homeHeaderImagee from 'D:/rentmyroom/homeHeaderImagee.jpg'
+import homeHeaderImagee from '../../homeHeaderImagee.jpg'
 
 function Header() {
   return (

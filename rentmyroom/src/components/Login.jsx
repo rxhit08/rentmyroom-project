@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import loginImageUsage from 'D:/rentmyroom/loginImageUsage.jpg'
+import loginImageUsage from '../../loginImageUsage.jpg'
 import bgLoginImage from 'D:/rentmyroom/bgLoginImage.jpg'
 import { useState } from 'react'
 import axios from 'axios'

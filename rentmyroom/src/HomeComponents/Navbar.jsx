@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { IoIosArrowDown } from 'react-icons/io';
-import myLogo from 'D:/rentmyroom/logo.png';
+import myLogo from '../../logo.png';
 import axios from 'axios';
+
 
 export default function Navbar() {
     const [isLoggedIn, setIsLoggedIn] = useState(false); 
