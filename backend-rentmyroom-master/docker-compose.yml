@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: iamrohitrk00
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+  pg:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: iamrohitrk00@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: test
+    ports:
+      - 8080:80
+
+  # app:
+  #   build: .
+  #   ports:
+  #     - 3000:3000
+  #   depends_on:
+  #     - db
+  #   environment:
+  #     PORT: 3000
+  #     JWT_SECRET: ec7e8162936668cd83b0ab9e4990b509b573752d8571b30207d78de3c64ea981=value
