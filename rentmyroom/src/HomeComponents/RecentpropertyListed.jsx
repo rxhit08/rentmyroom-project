@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Recentlyproperlistedcard from './homeinnercomponents/Recentlyproperlistedcard';
-import contents from '../assets/Roomdata';
 
 function RecentpropertyListed() {
+  const [roomsData, setRoomsData] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from the endpoint
+    fetch('http://localhost:3000/property')
+      .then(response => response.json())
+      .then(data => {
+        setRoomsData(data); // Set the fetched data to state
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
+  // Filter recently listed properties
+  const recentlyListedProperties = roomsData
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    .slice(0, 3);
+
   return (
     <div>
       <div className='h-auto w-full flex flex-col items-center justify-center'>
@@ -13,16 +31,17 @@ function RecentpropertyListed() {
       </div>
       <div className='mt-4 w-full flex justify-center'>
         <div className='grid grid-cols-3 gap-14 md:grid-cols-2 lg:grid-cols-3 mb-14'>
-          {contents.slice(0, 3).map((content) => (
-            <div key={content.key}>
+          {recentlyListedProperties.map((property) => (
+            <div key={property.id} className="card-container">
               <Recentlyproperlistedcard
-                name={content.name}
-                desc={content.desc}
-                image={content.image}
-                price={content.price}
-                rating={content.rating}
-                type={content.type}
-                address = {content.address}
+                location={property.location}
+                description={property.description}
+                image={property.image}
+                price={property.price}
+                bathrooms={property.bathrooms}
+                bhk={property.bhk}
+                address={property.address}
+                id = {property.id}
               />
             </div>
           ))}

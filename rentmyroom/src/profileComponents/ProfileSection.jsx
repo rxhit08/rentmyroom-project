@@ -99,13 +99,7 @@ const ProfileSection = () => {
                 <p className='pl-10 p-3 font-nunito'><span className="font-bold font-nunito">Phone Number:</span> {userData.phone}</p>
                 <p className='pl-10 p-3 font-nunito'><span className="font-bold font-nunito">Gender:</span> {userData.gender}</p>
                 <p className='pl-10 p-3 font-nunito'><span className="font-bold font-nunito">Address:</span> {userData.address}</p>
-                <div className=" pl-10 p-3">
-                  <span className="font-bold font-nunito">Password:</span> 
-                  {showPassword ? userData.password : '********'}
-                  <button className="ml-6 font-nunito text-blue-500" onClick={handlePasswordVisibility}>
-                    {showPassword ? <FaEyeSlash className=''/> : <FaEye className=''/>}
-                  </button>
-                </div>
+                
               </div>
             </div>
           )}

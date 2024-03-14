@@ -5,15 +5,15 @@ import { NavLink } from 'react-router-dom';
 
 function Roomscard({ room }) {
   const handleClick = () => {
-    // Store the room ID in localStorage
     localStorage.setItem('roomId', room.id);
+    
   };
 
   return (
     <NavLink to="/roomsoverview">
-    <div className="w-[300px] rounded-md border m-2 ml-6 bg-white" onClick={handleClick}>
+    <div className="w-[300px] rounded-md border m-2 ml-6 mt-6 mb-6 bg-white" onClick={handleClick}>
       <img
-        src={room.image}
+        src={room.image[0]}
         alt="roomImage"
         className="h-[200px] w-full rounded-t-md object-cover cursor-pointer"
       />
@@ -45,13 +45,6 @@ function Roomscard({ room }) {
             </p>
           </div>
         </div>
-        <button
-          type="button"
-          className="mt-4 w-full rounded-sm bg-blue-700 hover:bg-blue-800 px-2 py-1.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-          onClick={handleClick}
-        >
-          Rent
-        </button>
       </div>
     </div>
     </NavLink>

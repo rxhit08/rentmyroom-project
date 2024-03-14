@@ -24,7 +24,7 @@ function Roomoverview() {
 
   return (
     <div>
-      <div className='md:grid md:grid-cols-2 md:gap-3 lg:grid lg:grid-cols-4 lg:gap-3'>
+      <div className=''>
         {roomData ? (
           <Roomoverviewcard
             city={roomData.city}
@@ -32,7 +32,9 @@ function Roomoverview() {
             image={roomData.image}
             price={roomData.price}
             bhk={roomData.bhk}
-            address={roomData.address} // Assuming you have address in roomData
+            bathrooms={roomData.bathrooms}
+            address={roomData.address}
+            location={roomData.location} // Assuming you have address in roomData
             key={roomData.id}
           />
         ) : (

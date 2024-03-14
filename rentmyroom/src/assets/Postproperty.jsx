@@ -4,13 +4,14 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 export default function Postproperty() {
+  const [address, setAddress] = useState('');
   const [location, setLocation] = useState('');
   const [city, setCity] = useState('');
   const [bhk, setBhk] = useState('');
   const [bathrooms, setBathrooms] = useState('');
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
+  const [images, setImages] = useState([]);
   const [charCount, setCharCount] = useState(0);
 
   const navigate = useNavigate();
@@ -38,19 +39,35 @@ export default function Postproperty() {
 
   //encoding image to string
 
+  // const handleChange = (e) => {
+  //   console.log(e.target.files)
+  //   const files = Array.from(e.target.files);
+  //   const imageArray = [];
+  //   const reader = new FileReader()
+
+  //   reader.onload = (event) => {
+  //     const base64string = event.target.result
+  //     setImage(base64string);
+  //   }
+  //   reader.readAsDataURL(file)
+  // }
+
   const handleChange = (e) => {
-    console.log(e.target.files)
-    const file = e.target.files[0];
-    const reader = new FileReader()
+    const files = Array.from(e.target.files); // Convert FileList to array
+    const imageArray = [];
+    files.forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        imageArray.push(event.target.result);
+        if (imageArray.length === files.length) {
+          setImages(imageArray);
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+  };
 
-    reader.onload = (event) => {
-      const base64string = event.target.result
-      setImage(base64string);
-    }
-    reader.readAsDataURL(file)
-  }
-
-  console.log(image)
+  console.log(images)
 
   // Handling Form Submission
 
@@ -72,11 +89,12 @@ export default function Postproperty() {
       {
         "description": description,
         "price": parseInt(price),
-        "image": image,
+        "image": images,
         "bhk": parseInt(bhk),
         "bathrooms": parseInt(bathrooms),
         "city": city,
-        "location": location
+        "location": location,
+        "address": address
       },
       {
           headers: {
@@ -112,6 +130,15 @@ export default function Postproperty() {
             <form onSubmit={handleSubmit} className="max-w-md mx-auto pt-10">
               <div className="mb-4">
                 <label className="block mb-2 font-bold">Address of room</label>
+                <input
+                  type="text"
+                  placeholder="Address"
+                  id="address"
+                  name="address"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                />
                 <input
                   type="text"
                   placeholder="Location"
@@ -168,13 +195,14 @@ export default function Postproperty() {
                   />
                 </div>
                 <div className="mb-4">
-                  <label className="block mb-2 font-bold">Image</label>
+                  <label className="block mb-2 font-bold">Images (You can add upto 4 images)</label>
                   <input
                     type="file"
                     id="image"
                     name="image"
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     onChange={handleChange}
+                    multiple
                   />
                 </div>
                 <div className="mb-4">

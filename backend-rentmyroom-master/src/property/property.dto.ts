@@ -23,5 +23,8 @@ export class CreatePropertyDto {
   location: string;
 
   @IsNotEmpty()
-  image: string;
+  address: string;
+
+  @IsNotEmpty()
+  image: string[];
 }

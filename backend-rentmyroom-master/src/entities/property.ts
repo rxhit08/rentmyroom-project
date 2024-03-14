@@ -33,7 +33,10 @@ export class Property {
   location!: string;
 
   @Column('text')
-  image!: string;
+  address!: string;
+
+  @Column('text', { array: true }) 
+  image!: string[];
 
   @ManyToOne(() => User, (user) => user.property)
   owner!: User;
