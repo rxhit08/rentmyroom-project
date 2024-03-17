@@ -5,9 +5,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
-import { Property, User } from './entities';
+import { PhoneNumber, Property, User } from './entities';
 import { ConfigModule } from '@nestjs/config';
 import { PropertyModule } from './property/property.module';
+import { PhoneNumberModule } from './phonenumber/phonenumber.module'
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { PropertyModule } from './property/property.module';
       username: 'iamrohitrk00',
       password: 'test',
       database: 'postgres',
-      entities: [User, Property],
+      entities: [User, Property, PhoneNumber],
       synchronize: true,
       logging: true,
     }),
@@ -28,6 +29,7 @@ import { PropertyModule } from './property/property.module';
       isGlobal: true,
     }),
     PropertyModule,
+    PhoneNumberModule,
   ],
   controllers: [AppController],
   providers: [AppService],
