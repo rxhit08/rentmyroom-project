@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import bgLoginImage from 'D:/rentmyroom/bgLoginImage.jpg'
+import bgLoginImage from '../../bgLoginImage.jpg'
 import axios from 'axios'
+import cartoonRegister from '../../carttonRegister.png'
+
 
 export default function SignUpThree() {
 
@@ -22,10 +24,13 @@ export default function SignUpThree() {
   
 
   return (
-    <section>
-      <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24 bg-cover bg-center" style={{backgroundImage: `url(${bgLoginImage})`}}>
-        <div className=" p-8 bg-teal-50 rounded-2xl xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md shadow-2xl">
-          <div className="mb-2 flex justify-center">
+    <section className='flex' style={{ backgroundImage: `url(${bgLoginImage})` }}>
+      <div className=" w-1/2">
+          <img src={cartoonRegister} alt="Room" className="w-full ml-24 h-auto rounded-xl" />
+        </div>
+      <div className="h-screen flex items-center ml-16 justify-center px-4 py-10 sm:px-6 sm:py-4 lg:px-4 lg:py-24 bg-cover bg-center">        <div className=" p-8 rounded-2xl xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md shadow-2xl">
+      
+          <div className="mb-2 flex justify-center mx-auto">
           </div>
           <h2 className="text-center text-2xl font-bold leading-tight text-black">
             Sign up to create account

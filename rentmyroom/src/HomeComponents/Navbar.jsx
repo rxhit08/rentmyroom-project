@@ -106,8 +106,8 @@ export default function Navbar() {
                             <li>
                                 <NavLink
                                     to="/"
-                                    className={() =>
-                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-purple-50 lg:hover:bg-transparent lg:border-0 hover:text-purple-700 lg:p-0`
+                                    className={({isActive}) =>
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100  lg:hover:bg-transparent lg:border-0 hover:text-purple-700 lg:p-0`
                                     }
                                 >
                                     Home
@@ -116,8 +116,8 @@ export default function Navbar() {
                             <li>
                                 <NavLink
                                     to="/rooms"
-                                    className={() =>
-                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-purple-50 lg:hover:bg-transparent lg:border-0 hover:text-purple-700 lg:p-0`
+                                    className={({isActive}) =>
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-purple-50 lg:hover:bg-transparent lg:border-0 hover:text-purple-700 lg:p-0`
                                     }
                                 >
                                     Rooms
@@ -126,8 +126,8 @@ export default function Navbar() {
                             <li>
                                 <NavLink
                                     to="/about"
-                                    className={() =>
-                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-purple-50 lg:hover:bg-transparent lg:border-0 hover:text-purple-700 lg:p-0`
+                                    className={({isActive}) =>
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-purple-50 lg:hover:bg-transparent lg:border-0 hover:text-purple-700 lg:p-0`
                                     }
                                 >
                                     About Us
@@ -136,8 +136,8 @@ export default function Navbar() {
                             <li>
                                 <NavLink
                                     to="/contactus"
-                                    className={() =>
-                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-purple-50 lg:hover:bg-transparent lg:border-0 hover:text-purple-700 lg:p-0`
+                                    className={({isActive}) =>
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-purple-50 lg:hover:bg-transparent lg:border-0 hover:text-purple-700 lg:p-0`
                                     }
                                 >
                                     Contact Us

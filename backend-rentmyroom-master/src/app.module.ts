@@ -9,6 +9,8 @@ import { PhoneNumber, Property, User } from './entities';
 import { ConfigModule } from '@nestjs/config';
 import { PropertyModule } from './property/property.module';
 import { PhoneNumberModule } from './phonenumber/phonenumber.module'
+import { ContactModule } from './contactus/contactus.module'
+import { Contact } from './entities/contactus';
 
 @Module({
   imports: [
@@ -19,7 +21,7 @@ import { PhoneNumberModule } from './phonenumber/phonenumber.module'
       username: 'iamrohitrk00',
       password: 'test',
       database: 'postgres',
-      entities: [User, Property, PhoneNumber],
+      entities: [User, Property, PhoneNumber, Contact],
       synchronize: true,
       logging: true,
     }),
@@ -30,6 +32,7 @@ import { PhoneNumberModule } from './phonenumber/phonenumber.module'
     }),
     PropertyModule,
     PhoneNumberModule,
+    ContactModule,
   ],
   controllers: [AppController],
   providers: [AppService],

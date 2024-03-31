@@ -12,6 +12,9 @@ import Postproperty from './assets/Postproperty.jsx'
 import ProfileSection from './profileComponents/ProfileSection.jsx'
 import Roomoverview from './assets/Roomoverview.jsx'
 import Myproperties from './profileComponents/MyProperties.jsx'
+import { ToastContainer } from 'react-toastify';
+import  'react-toastify/dist/ReactToastify.css';
+
 
 
 const router = createBrowserRouter([
@@ -65,6 +68,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <ToastContainer />
     <RouterProvider router={router} />
   </React.StrictMode>,
 )

@@ -114,6 +114,7 @@ export default function Postproperty() {
 
   return (
     <div className='bg-gradient-to-r from-cyan-100 from-10% via-sky-50 to-blue-100 to-90%'>
+    <div className='p-8'>
       <div className='mx-80 bg-white font-nunito'>
         <div className="container flex flex-row items-center pl-20">
           <div className="w-8/12">
@@ -125,10 +126,10 @@ export default function Postproperty() {
           </div>
         </div>
         <div className=''>
-          <div className="container mx-auto w-1/2">
+          <div className="container mx-auto w-2/3">
             <h1 className="text-2xl font-bold mb-4 text-center">Room Rent Posting Form</h1>
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto pt-10">
-              <div className="mb-4">
+            <form onSubmit={handleSubmit} className="max-w-md mx-auto pt-6">
+              <div className="">
                 <label className="block mb-2 font-bold">Address of room</label>
                 <input
                   type="text"
@@ -158,7 +159,7 @@ export default function Postproperty() {
                   onChange={(e) => setCity(e.target.value)}
                 />
                 </div>
-                <div className="mb-4">
+                <div className="mb-4 mt-4">
                   <label className="block mb-2 font-bold">Number of Bedrooms (BHK)</label>
                   <input
                     type="number"
@@ -219,10 +220,10 @@ export default function Postproperty() {
                   />
                   <p className="text-sm text-gray-500">{charCount}/250 characters</p>
                 </div>
-                <div className="mb-4 text-center">
+                <div className="text-center pb-4">
                   <button
                     type="submit"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline "
                   >
                     Submit
                   </button>
@@ -232,6 +233,7 @@ export default function Postproperty() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
